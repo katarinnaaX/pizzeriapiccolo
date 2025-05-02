@@ -1,0 +1,453 @@
+<html lang="sr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Piccolo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff8f0; }
+        header {
+            background-image: url('https://images.aftonbladet-cdn.se/v2/images/905f3eda-fe41-48f9-a5e0-1b285354d9e8?fit=crop&format=auto&h=563&q=50&w=1000&s=2794df882df3e5ae4e80bb8d20514ffeb1281940');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        header img.logo {
+            width: 130px;
+            height: 130px;
+            margin-right: 10px;
+            border-radius: 50%;
+	    background: white;
+            padding: 5px;
+        }
+        .header-text h1 { margin: 0; font-size: 36px; }
+        .header-text p { margin-top: 8px; font-size: 18px; }
+        nav { background-color: #800000; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        section { padding: 20px; }
+        .accordion { background-color: #fcbf49; color: #003049; cursor: pointer; padding: 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 18px; margin-top: 10px; border-radius: 8px; }
+        .active, .accordion:hover { background-color: #ffda79; }
+        .panel { padding: 0 18px; display: none; background-color: #fff3cd; overflow: hidden; border-radius: 8px; margin-bottom: 10px; }
+        .menu-item {
+  		margin-top: 20px;
+  		padding: 15px;
+  		background-color: #fff8e1;
+  		border-radius: 8px;
+	}
+
+	.menu-item h3 {
+  		font-size: 20px;
+  		margin-bottom: 5px;
+	}
+        footer { background-color: #800000; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+        iframe { width: 100%; height: 300px; border: 0; }
+        .specijalna-ponuda { background-color: #fff3cd; color: #800000; padding: 15px; text-align: center; font-weight: bold; }
+        .telefon { line-height: 1.8; }
+	.pizza-sizes {
+  		margin-top: 5px;
+  		width: 60%;
+  		border-collapse: collapse;
+  		font-size: 15px;
+	}
+	.pizza-sizes td {
+  		padding: 4px 8px;
+	}
+	.pizza-sizes tr:nth-child(odd) {
+  		background-color: #ffeeb8;
+	}
+	.pizza-sizes td:first-child {
+  		font-weight: bold;
+	}	
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="https://i.pinimg.com/736x/a1/c4/04/a1c404bea49c0143058bc4dd9da79d33.jpg" alt="Logo" class="logo">
+        <div class="header-text">
+            <h1>Pizzeria Piccolo</h1>
+            <p>Vaša omiljena dostava pica i jela!</p>
+        </div>
+    </div>
+</header>
+
+<!-- Zakomentarisano
+<div class="specijalna-ponuda">
+    🎁 Porudžbine preko 1500 RSD ➔ GRATIS palačinka ili Coca Cola 1.5l!
+</div>
+-->
+
+<div style="background-color: #fcbf49; color: #800000; padding: 10px; margin: 20px 0; border-radius: 8px; font-weight: bold; text-align: center;">
+  🚚 Besplatna dostava za porudžbine preko 1000 RSD!
+</div>
+
+<nav>
+    <a href="#meni">Meni</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="meni">
+    <h2>🍽️ Naš Meni</h2>
+
+	<button class="accordion">🍕 Pizze</button>
+    	<div class="panel" style="display: none;">
+        <div class="menu-item">
+  	<h3>Margarita</h3>
+  	<p>Pelat, gauda, origano, masline</p>
+  	<table class="pizza-sizes">
+    	<tr><td>24 cm</td><td>400 RSD</td></tr>
+    	<tr><td>32 cm</td><td>690 RSD</td></tr>
+    	<tr><td>42 cm</td><td>890 RSD</td></tr>
+	<tr><td>50 cm</td><td>1190 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Vezuvio</h3>
+  	<p>Pelat, gauda, šunka, origano, masline</p>
+  	<table class="pizza-sizes">
+    	<tr><td>24 cm</td><td>430 RSD</td></tr>
+    	<tr><td>32 cm</td><td>730 RSD</td></tr>
+    	<tr><td>42 cm</td><td>950 RSD</td></tr>
+	<tr><td>50 cm</td><td>1250 RSD</td></tr>
+  	</table>
+	</div>
+	
+	<div class="menu-item">
+  	<h3>Fungi</h3>
+  	<p>Pelat, gauda, šampinjoni, origano, masline</p>
+  	<table class="pizza-sizes">
+    	<tr><td>24 cm</td><td>430 RSD</td></tr>
+    	<tr><td>32 cm</td><td>730 RSD</td></tr>
+    	<tr><td>42 cm</td><td>950 RSD</td></tr>
+	<tr><td>50 cm</td><td>1250 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+	<h3>Capricioza</h3>
+  	<p>Pelat, gauda, šunka, šampinjoni, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>24 cm</td><td>460 RSD</td></tr>
+    	<tr><td>32 cm</td><td>740 RSD</td></tr>
+    	<tr><td>42 cm</td><td>980 RSD</td></tr>
+	<tr><td>50 cm</td><td>1280 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+ 	<h3>Toono</h3>
+  	<p>Pelat, posna gauda, tunjevina, šampinjoni, masline, luk, paprika, kukuruz, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>750 RSD</td></tr>
+    	<tr><td>42 cm</td><td>990 RSD</td></tr>
+	<tr><td>50 cm</td><td>1290 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+ 	<h3>Vegetarijana</h3>
+  	<p>Pelat, posna gauda, šampinjoni, paprika, maslinovo ulje, tikvice, čeri, rukola, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>740 RSD</td></tr>
+    	<tr><td>42 cm</td><td>980 RSD</td></tr>
+	<tr><td>50 cm</td><td>1280 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+ 	<h3>Peperoni</h3>
+  	<p>Pelat, gauda, šunka, kulen, ljuta papričica, parmezan, čili sos, jaje, pavlaka</p>
+  	<table class="pizza-sizes">
+	<tr><td>24 cm</td><td>520 RSD</td></tr>
+    	<tr><td>32 cm</td><td>800 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1030 RSD</td></tr>
+	<tr><td>50 cm</td><td>1330 RSD</td></tr>
+  	</table>
+	</div>
+        
+	<div class="menu-item">
+ 	<h3>Quatro stagioni</h3>
+  	<p>Pelat, gauda, šunka, kulen, šampinjoni, jaje, pavlaka, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>800 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1030 RSD</td></tr>
+	<tr><td>50 cm</td><td>1330 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Srpska</h3>
+  	<p>Pelat, gauda, dimljeni vrat, kulen, pančeta, jaje, kajmak, ljuta papričica, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>850 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1080 RSD</td></tr>
+	<tr><td>50 cm</td><td>1380 RSD</td></tr>
+  	</table>
+	</div>
+	
+	<div class="menu-item">
+  	<h3>Pršuto pomodoro</h3>
+  	<p>Pavlaka, gauda, pršuta, beli luk, čeri, maslinovo ulje, rukola, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>900 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1130 RSD</td></tr>
+	<tr><td>50 cm</td><td>1430 RSD</td></tr>
+  	</table>
+	</div>
+ 
+	<div class="menu-item">
+  	<h3>Milano</h3>
+  	<p>Pelat, mocarela, budimska kobasica, pančeta, kajmak, slatko-ljuti sos, maslinovo ulje, rukola, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>850 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1080 RSD</td></tr>
+	<tr><td>50 cm</td><td>1380 RSD</td></tr>
+  	</table>
+	</div>
+	
+	<div class="menu-item">
+  	<h3>Quatro carne</h3>
+  	<p>Pelat, gauda, šunka, kulen, pečenica, dimljeni vrat, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>885 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1050 RSD</td></tr>
+	<tr><td>50 cm</td><td>1350 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Fantastico</h3>
+  	<p>Pelat, mocarela, dimljeni vrat, pečenica, dimljena piletina, šampinjoni, jaje, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>890 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1060 RSD</td></tr>
+	<tr><td>50 cm</td><td>1360 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Verona</h3>
+  	<p>Pelat, gauda, šunka, kulen, šampinjoni, kajmak, jaje, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>870 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1100 RSD</td></tr>
+	<tr><td>50 cm</td><td>1400 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Bjanka</h3>
+  	<p>Pavlaka, gauda, pileći file, šampinjoni, feta sir, tikvice, parmezan, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>800 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1030 RSD</td></tr>
+	<tr><td>50 cm</td><td>1330 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Piccolo</h3>
+  	<p>Pelat, gauda, pileći file, dimljena piletina, šampinjoni, gorgonzola, parmezan, paprika, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>920 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1200 RSD</td></tr>
+	<tr><td>50 cm</td><td>1500 RSD</td></tr>
+  	</table>
+	</div>
+
+	<div class="menu-item">
+  	<h3>Quatro formaggi</h3>
+  	<p>Pavlaka, gauda, dimljena gauda, gorgonzola, parmezan, masline, origano</p>
+  	<table class="pizza-sizes">
+    	<tr><td>32 cm</td><td>850 RSD</td></tr>
+    	<tr><td>42 cm</td><td>1080 RSD</td></tr>
+	<tr><td>50 cm</td><td>1380 RSD</td></tr>
+  	</table>
+	</div>
+	
+	<div class="menu-item">
+  	<h3>Italijanska piroška</h3>
+  	<table class="pizza-sizes">
+	<tr><td>1 kom</td><td>600 RSD</td></tr>
+    	<tr><td>2 kom</td><td>1200 RSD</td></tr>
+  	</table>
+	</div>
+	<div class="menu-item"><h3>Kreator</h3><p>Budite i vi sami svoj kreator pizze!</p></div>
+    </div>
+
+	<button class="accordion">🍝 Paste (500g) </button>
+    	<div class="panel" style="display: none;">
+        <div class="menu-item"><h3>Carbonara | 600 RSD</h3><p>Neutralna pavlaka, pančeta, jaje, beli luk, parmezan, masline</p></div>
+        <div class="menu-item"><h3>Vegetarijana | 570 RSD</h3><p>Pelat, crni luk, šampinjoni, mix povrća, začini, parmezan, masline</p></div>
+        <div class="menu-item"><h3>Crema e fungi | 590 RSD</h3><p>Neutralna pavlaka, šampinjoni, maslinovo ulje, gauda, parmezan, začini, masline</p></div>
+	<div class="menu-item"><h3>Amatriciana | 650 RSD</h3><p>Pelat, pančeta, dimljeni vrat, beli luk, dimljena gauda, slatko-ljuti sos, parmezan, čeri</p></div>
+	<div class="menu-item"><h3>Curri chicken | 660 RSD</h3><p>Neutralna pavlaka, pileći file, šampinjoni, kačkavalj, parmezan, čeri, curri sos, dimljena gauda</p></div>
+	<div class="menu-item"><h3>Bolognese | 600 RSD</h3><p>Pelat, mleveno meso, crni luk, parmezan, začini, masline</p></div>
+	<div class="menu-item"><h3>Roma | 700 RSD</h3><p>Neutralna pavlaka, pileći file, dimljena piletina, šampinjoni, kačkavalj, parmezan, čeri, dimljena gauda</p></div>
+	<div class="menu-item"><h3>Diavolo | 660 RSD</h3><p>Pelat, kulen, pančeta, crni luk, beli luk, začini, parmezan, čeri</p></div>
+	<div class="menu-item"><h3>Quatro formaggi | 680 RSD</h3><p>Neutralna pavlaka, gauda, parmezan, gorgonzola, masline, dimljena gauda</p></div>
+	<div class="menu-item"><h3>Piccolo | 700 RSD</h3><p>Neutralna pavlaka, dimljeni pileći file, dimljeni kačkavalj, šampinjoni, slatko-ljuti sos, masline</p></div>
+    </div>
+
+    <button class="accordion">🍔 Burgeri</button>
+    <div class="panel">
+        <div class="menu-item"><h3>Dupli burger u pizza testu | 840 RSD</h3><p>2 x tost, mocarela, dimljeni vrat, 2 x čedar sir, jaje, kiseli krastavci, burger sos</p></div>
+	<div class="menu-item"><h3>Bellisimo burger | 550 RSD</h3><p>Čedar sir, paradajz, crveni luk, iceberg, samuraj sos</p></div>
+	<div class="menu-item"><h3>Fantastico burger | 650 RSD</h3><p>Čedar sir, pančeta, jaje, paradajz, iceberg, burger sos, samuraj sos</p></div>
+        <div class="menu-item"><h3>Koza nostra burger | 550 RSD</h3><p>Čedar sir, burger sos, barbecue sos, crveni luk, paradajz</p></div>
+	<div class="menu-item"><h3>Killer burger | 700 RSD</h3><p>Čedar sir, pančeta, slatko-ljuti sos, čili sos, dimljeni vrat, iceberg</p></div>
+	<div class="menu-item"><h3>Mafioza burger | 650 RSD</h3><p>Čedar sir, dimljeni vrat, burger sos, jaje, mocarela, samuraj sos</p></div>
+    </div>
+
+    <button class="accordion">🌯 Wrap Tortilje (40cm) </button>
+    <div class="panel">
+        <div class="menu-item"><h3>Wrap fantastico | 500 RSD</h3><p>Dresing, šunka, zimska, jaje, iceberg, paradajz, slatko-ljuti sos, dimljena gauda, kiseli krastavci</p></div>
+	<div class="menu-item"><h3>Gringo | 550 RSD</h3><p>Dresing, grilovana pančeta, grilovano povrće, iceberg, slatko-ljuti sos, parmezan, gauda, čeri</p></div>
+	<div class="menu-item"><h3>Brutal | 600 RSD</h3><p>Dresing, dimljeni vrat, pršuta, jaje, iceberg, paradajz, barbecue sos, gauda</p></div>
+	<div class="menu-item"><h3>Piccolo | 600 RSD</h3><p>Burger sos, pileći file, dimljeni file, dimljena gauda, parmezan, šampinjoni, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Fina priča | 480 RSD</h3><p>Dresing, gauda, grilovano povrće, šampinjoni, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Jaka priča | 600 RSD</h3><p>Burger sos, gauda, pršuta, jaje, beli luk, rukola, ljuta papričica, slatko-ljuti sos, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Quatro carne | 580 RSD</h3><p>Dresing, šunka, dimljeni vrat, pečenica, kulen, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Fungi | 480 RSD</h3><p>Pelat, šampinjoni, gauda, povrće, crni luk, tunjevina, parmezan, paprika</p></div>
+	<div class="menu-item"><h3>Brzi Gonzales | 550 RSD</h3><p>Dresing, gauda, dimljena gauda, parmezan, pečenica, ljuta papričica, čili sos, barbecue sos, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Quatro formaggi | 570 RSD</h3><p>Dresing, gauda, dimljena gauda, gorgonzola, parmezan, paradajz, iceberg</p></div>
+    </div>
+
+    <button class="accordion">🍗 Jela po porudžbini</button>
+    <div class="panel">
+        <div class="menu-item"><h3>Komplet lepinja | 530 RSD</h3><p>Kajmak, vruća lepinja, jaje, pršuta</p></div>
+	<div class="menu-item"><h3>Piccolino džambo giros (550g) | 640 RSD</h3><p>Domaća tortilja, pileći file, pomfrit, prilog po želji</p></div>
+	<div class="menu-item"><h3>Bečka šnicla | 850 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Bečka šnicla u susamu | 850 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Pileća bečka šnicla | 820 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Pileća bečka šnicla u susamu | 820 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Piletina u gorgonzola sosu | 790 RSD</h3><p>Vruća lepinja, pomfrit, gorgonzola sos</p></div>
+	<div class="menu-item"><h3>Piletina u sosu od šampinjona | 760 RSD</h3><p>Vruća lepinja, pomfrit, sos od šampinjona</p></div>
+	<div class="menu-item"><h3>Chicken nuggets (10 kom) | 950 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Ćureći medaljoni | 1000 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Pohovani kačkavalj | 750 RSD</h3><p>Vruća lepinja, pomfrit, tartar sos</p></div>
+	<div class="menu-item"><h3>Pomfrit (200g) | 200 RSD</h3><p></p></div>
+    </div>
+
+    <button class="accordion">🥪 Sendviči u vrućoj lepinji (450g) </button>
+    <div class="panel">
+        <div class="menu-item"><h3>Clasic | 320 RSD</h3><p>Pavlaka, praška šunka, gauda, paradajz</p></div>
+	<div class="menu-item"><h3>Fantastico | 370 RSD</h3><p>Dresing, mocarela, gauda, dimljeni vrat, iceberg, paradajz</p></div>
+	<div class="menu-item"><h3>Bellisimo | 370 RSD</h3><p>Sendvič sos, gauda, parmezan, zimska, kulen, barbecue sos, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Pršuto pomodoro | 440 RSD</h3><p>Kajmak, mocarela, pršuta, beli luk, čeri, rukola</p></div>
+	<div class="menu-item"><h3>Quatro carne | 420 RSD</h3><p>Majonez, gauda, dimljeni vrat, pečenica, kulen, kiseli krastavci</p></div>
+	<div class="menu-item"><h3>Srpski | 420 RSD</h3><p>Kajmak, pančeta, dimljeni vrat, gauda, jaje, ljuta papričica, paradajz</p></div>
+	<div class="menu-item"><h3>Mafioza | 440 RSD</h3><p>Dresing, dimljena gauda, dimljena piletina, sendvič sos, slatko-ljuti sos, krastavac</p></div>
+	<div class="menu-item"><h3>Jaka priča | 490 RSD</h3><p>Dresing, dimljeni kačkavalj, pileći file, dimljeni file, samuraj sos, paradajz, iceberg</p></div>
+	<div class="menu-item"><h3>Italijanski sendvič | 450 RSD</h3><p>Mocarela, pršuta, paradajz, rukola, maslinovo ulje</p></div>
+	<div class="menu-item"><h3>Vruća lepinja sa kajmakom | 280 RSD</h3><p></p></div>
+    </div>
+
+    <button class="accordion">🥗 Salate</button>
+    <div class="panel">
+        <div class="menu-item"><h3>Šopska salata | 300 RSD</h3><p></p></div>
+	<div class="menu-item"><h3>Srpska salata | 270 RSD</h3><p></p></div>
+	<div class="menu-item"><h3>Grčka salata | 350 RSD</h3><p></p></div>
+    </div>
+
+    <button class="accordion">🥞 Palačinke</button>
+    <div class="panel">
+    <h2>Slane palačinke (pohovane, lazanja palačinke)</h2>
+    	<div class="menu-item"><h3>Šunka | 370 RSD</h3><p>Šunka, gauda, pavlaka</p></div>
+	<div class="menu-item"><h3>Pečenica | 400 RSD</h3><p>Pečenica, gauda, pavlaka</p></div>
+	<div class="menu-item"><h3>Kulen | 430 RSD</h3><p>Dresing, kulen, gauda, kiseli krastavac</p></div>
+	<div class="menu-item"><h3>Zimski | 480 RSD</h3><p>Kajmak, zimska kobasica, beli luk, gauda, čeri</p></div>
+	<div class="menu-item"><h3>Pršuta | 570 RSD</h3><p>Kajmak, gauda, pršuta, beli luk, čeri</p></div>
+	<div class="menu-item"><h3>Fantastico | 560 RSD</h3><p>Burger sos, dimljeni vrat, pančeta, gauda, čeri</p></div>
+	<div class="menu-item"><h3>Piccolo | 600 RSD</h3><p>Dresing, pileći file, dimljeni file, gauda, dimljena gauda, čeri</p></div>
+    <br><br>
+    <h2>Slatke palačinke</h2>
+    <div class="menu-item"><h3>Eurokrem | 280 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Nutela | 300 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Milka | 300 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Kinder | 300 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Najlepše želje | 280 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Džem od kajsije | 250 RSD</h3><p></p></div>
+
+    <h3>Dodaci</h3>
+    <div class="menu-item"><p>Banana | +50 RSD</p></div>
+    <div class="menu-item"><p>Plazma | +50 RSD</p></div>
+    <div class="menu-item"><p>Orasi | +60 RSD</p></div>
+    <div class="menu-item"><p>Kokos | +40 RSD</p></div>
+    <div class="menu-item"><p>Višnja | +60 RSD</p></div>
+    <div class="menu-item"><p>Toping čokolada | +60 RSD</p></div>
+    <div class="menu-item"><p>Toping šumsko voće | +60 RSD</p></div>
+    <div class="menu-item"><p>Mix voća | +70 RSD</p></div>
+</div>
+
+<button class="accordion">🥤 Piće</button>
+    <div class="panel">
+    <div class="menu-item"><h3>Coca Cola | 150 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Fanta | 150 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Nestea | 150 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Kisela voda | 120 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Rosa voda | 120 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Domaća kafa | 130 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Cappuccino | 170 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Nes | 170 RSD</h3><p></p></div>
+    <div class="menu-item"><h3>Čaj | 100 RSD</h3><p></p></div>
+</div>
+</section>
+
+<section id="kontakt">
+    <h2 style="text-align: center;">Kontaktirajte nas 📞</h2>
+    <div style="background-color: #fff3cd; padding: 20px; border-radius: 8px; text-align: center; max-width: 400px; margin: auto;">
+        <p style="font-size: 18px; margin-bottom: 10px;"><strong>Telefon:</strong> <a href="tel:0616009039" style="color: #800000; text-decoration: none;">061 600 90 39</a></p>
+        <p style="font-size: 18px; margin-bottom: 10px;"><strong>Fiksni:</strong> <a href="tel:0116900821" style="color: #800000; text-decoration: none;">011 69 00 821</a></p>
+        <p style="font-size: 18px; margin-top: 20px;"><strong>Radno vreme:</strong><br>09:00 – 21:00<br>Nedeljom ne radimo</p>
+    </div>
+</section>
+
+<section id="lokacija">
+    <h2 style="text-align: center;">Lokacija 🗺️</h2>
+    <p style="text-align: center;"><strong>Adresa:</strong> Vidikovački venac 104a, Beograd</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2834.0328852092534!2d20.414194775760002!3d44.73934588151004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a71006847579f%3A0xb08c0026059b60b1!2sPizzeria%20Piccolo!5e0!3m2!1ssr!2srs!4v1745865640282!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<footer>
+    <p>© <span id="year"></span> Picerija Piccolo. Sva prava zadržana.</p>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</footer>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+</body></html>
