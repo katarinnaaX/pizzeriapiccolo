@@ -78,34 +78,6 @@
 	.pizza-sizes td:first-child {
   		font-weight: bold;
 	}
-	.odmor {
-    max-width: 680px;
-    margin: 20px auto;
-    padding: 20px 24px;
-    background-color: #800000;
-    color: #fff8f0;
-    border-radius: 12px;
-    text-align: center;
-    animation: odmorPulse 2.5s ease-in-out infinite;
-}
-.odmor-naslov {
-    margin: 0 0 6px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fcbf49;
-    font-weight: bold;
-}
-.odmor-datum { margin: 0; font-size: 28px; font-weight: bold; }
-.odmor-nota { margin: 8px 0 0; font-size: 14px; opacity: 0.9; }
-@keyframes odmorPulse {
-    0%, 100% { box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    50% { box-shadow: 0 0 0 7px rgba(252,191,73,0.25); }
-}
-@media (max-width: 600px) {
-    .odmor { padding: 16px; }
-    .odmor-datum { font-size: 23px; }
-}	
 </style>
 </head>
 <body>
@@ -123,13 +95,6 @@
 <div style="background-color: #fcbf49; color: #800000; padding: 10px; margin: 20px 0; border-radius: 8px; font-weight: bold; text-align: center;">
   Besplatna dostava, uz svaku porudžbinu preko 1500 RSD GRATIS palačinka ili Coca-Cola 1,5l
 </div>
-
-<div class="odmor">
-    <p class="odmor-naslov">Godišnji odmor</p>
-    <p class="odmor-datum">8.8. – 28.8.</p>
-    <p class="odmor-nota">Ponovo vas očekujemo od 29.8.</p>
-</div>
-
 
 <nav>
     <a href="#meni">Meni</a>
@@ -514,6 +479,7 @@
 <button class="accordion">🥤 Piće</button>
     <div class="panel">
     <div class="menu-item"><h3>Coca Cola | 150 RSD</h3><p></p></div>
+	<div class="menu-item"><h3>Coca Cola 1.5l | 250 RSD</h3><p></p></div>
     <div class="menu-item"><h3>Fanta | 150 RSD</h3><p></p></div>
     <div class="menu-item"><h3>Nestea | 150 RSD</h3><p></p></div>
     <div class="menu-item"><h3>Kisela voda | 120 RSD</h3><p></p></div>
